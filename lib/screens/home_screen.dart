@@ -1,6 +1,6 @@
 import 'package:bootickets/screens/hotel_screen.dart';
 import 'package:bootickets/screens/ticket_view.dart';
-import 'package:bootickets/utils/app_list.dart';
+import 'package:bootickets/utils/app_info_list.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -98,10 +98,9 @@ class HomeScreen extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.only(left: 20),
             child: Row(
-              children: const [
-                TicketView(),
-                TicketView(),
-              ],
+              children: ticketList
+                  .map((singleTicket) => TicketView(ticket: singleTicket))
+                  .toList(),
             ),
           ),
           const Gap(15),
