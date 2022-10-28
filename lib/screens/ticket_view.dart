@@ -8,8 +8,8 @@ import '../utils/app_styles.dart';
 class TicketView extends StatelessWidget {
 
   final Map<String, dynamic> ticket;
-
-  const TicketView({Key? key, required this.ticket}) : super(key: key);
+  final bool? isColor;
+  const TicketView({Key? key, required this.ticket, this.isColor}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
