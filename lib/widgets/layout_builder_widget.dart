@@ -12,12 +12,11 @@ class AppLayoutBuilderWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
-        print("The width is ${constraints.constrainWidth()}");
         return Flex(
           direction: Axis.horizontal,
           mainAxisSize: MainAxisSize.max,
           children: List.generate(
-            (constraints.constrainWidth() / 6).floor(),
+            (constraints.constrainWidth() / sections).floor(),
             (index) => SizedBox(
               width: 3,
               height: 1,

@@ -7,6 +7,7 @@ import 'package:gap/gap.dart';
 import '../utils/app_info_list.dart';
 import '../utils/app_styles.dart';
 import '../widgets/column_layout.dart';
+import '../widgets/layout_builder_widget.dart';
 
 class TicketScreen extends StatelessWidget {
   const TicketScreen({Key? key}) : super(key: key);
@@ -60,7 +61,8 @@ class TicketScreen extends StatelessWidget {
                           isColor: true,
                         )
                       ],
-                    )
+                    ),
+                    const AppLayoutBuilderWidget(isColor: true, sections: 6),
                   ],
                 ),
               )

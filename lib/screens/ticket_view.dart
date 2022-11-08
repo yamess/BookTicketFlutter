@@ -1,5 +1,6 @@
 import 'package:bootickets/utils/app_layout.dart';
 import 'package:bootickets/widgets/column_layout.dart';
+import 'package:bootickets/widgets/layout_builder_widget.dart';
 import 'package:bootickets/widgets/thick_container.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -58,32 +59,7 @@ class TicketView extends StatelessWidget {
                           children: [
                             SizedBox(
                               height: AppLayout.getHeight(24),
-                              child: LayoutBuilder(
-                                builder: (BuildContext context,
-                                    BoxConstraints constraints) {
-                                  return Flex(
-                                    direction: Axis.horizontal,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: List.generate(
-                                      (constraints.constrainWidth() / 6)
-                                          .floor(),
-                                      (index) => SizedBox(
-                                        width: 3,
-                                        height: 1,
-                                        child: DecoratedBox(
-                                          decoration: BoxDecoration(
-                                            color: isColor == null
-                                                ? Colors.white
-                                                : Colors.grey.shade300,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  );
-                                },
-                              ),
+                              child: const AppLayoutBuilderWidget(isColor: true, sections: 6),
                             ),
                             Center(
                               child: Transform.rotate(
