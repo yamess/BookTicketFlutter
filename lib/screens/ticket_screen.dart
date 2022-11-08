@@ -15,7 +15,7 @@ class TicketScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = AppLayout.getSize(context);
     return Scaffold(
-       backgroundColor: Styles.bgColor,
+      backgroundColor: Styles.bgColor,
       body: Stack(
         children: [
           ListView(
@@ -26,21 +26,37 @@ class TicketScreen extends StatelessWidget {
               Gap(AppLayout.getHeight(40)),
               Text("Tickets", style: Styles.headLineStyle),
               Gap(AppLayout.getHeight(20)),
-              const AppTicketTabs(firstTab: "Upcomin", secondTab: "Previous"),
+              const AppTicketTabs(firstTab: "Upcoming", secondTab: "Previous"),
               Gap(AppLayout.getHeight(20)),
               Container(
                 padding: EdgeInsets.only(left: AppLayout.getHeight(15)),
-                child: TicketView(ticket: ticketList[0], isColor: true,),
+                child: TicketView(
+                  ticket: ticketList[0],
+                  isColor: true,
+                ),
               ),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: AppLayout.getHeight(15)),
-                margin: EdgeInsets.symmetric(horizontal: AppLayout.getHeight(15)),
+                padding:
+                    EdgeInsets.symmetric(horizontal: AppLayout.getHeight(15)),
+                margin:
+                    EdgeInsets.symmetric(horizontal: AppLayout.getHeight(15)),
                 color: Colors.white,
                 child: Column(
                   children: [
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: const [
-                        AppColumnLayout()
+                        AppColumnLayout(
+                          firstText: "Flutter DB",
+                          secondText: "Passenger",
+                          crossAlignment: CrossAxisAlignment.start,
+                        ),
+
+                        AppColumnLayout(
+                          firstText: "5221 364869",
+                          secondText: "passport",
+                          crossAlignment: CrossAxisAlignment.end,
+                        )
                       ],
                     )
                   ],
