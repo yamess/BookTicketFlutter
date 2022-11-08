@@ -50,12 +50,14 @@ class TicketScreen extends StatelessWidget {
                           firstText: "Flutter DB",
                           secondText: "Passenger",
                           crossAlignment: CrossAxisAlignment.start,
+                          isColor: true,
                         ),
 
                         AppColumnLayout(
                           firstText: "5221 364869",
                           secondText: "passport",
                           crossAlignment: CrossAxisAlignment.end,
+                          isColor: true,
                         )
                       ],
                     )

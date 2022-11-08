@@ -1,4 +1,5 @@
-import 'package:flutter/cupertino.dart';
+
+import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 import '../utils/app_layout.dart';
@@ -8,12 +9,13 @@ class AppColumnLayout extends StatelessWidget {
   final String firstText;
   final String secondText;
   final CrossAxisAlignment crossAlignment;
-
+  final bool? isColor;
   const AppColumnLayout({
     Key? key,
     required this.firstText,
     required this.secondText,
     required this.crossAlignment,
+    this.isColor
   }) : super(key: key);
 
   @override
@@ -23,7 +25,7 @@ class AppColumnLayout extends StatelessWidget {
       children: [
         Text(
           firstText,
-          style: Styles.headLineStyle3,
+          style: isColor==null? Styles.headLineStyle3.copyWith(color: Colors.white):Styles.headLineStyle3,
         ),
         Gap(AppLayout.getHeight(5)),
         Text(
